@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Modules\Ad\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Ad\Services\AdStatisticsService;
+use Modules\Ad\Services\AdStatisticsServiceInterface;
 
 class AdServiceProvider extends ServiceProvider
 {
@@ -13,5 +15,7 @@ class AdServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
 
         $this->app->register(RouteServiceProvider::class);
+
+        $this->app->bind(AdStatisticsServiceInterface::class, AdStatisticsService::class);
     }
 }

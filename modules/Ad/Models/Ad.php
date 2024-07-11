@@ -13,6 +13,19 @@ class Ad extends Model
 {
     use HasFactory;
 
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'impressions' => 'integer',
+            'clicks' => 'integer',
+        ];
+    }
+
     protected static function newFactory(): AdFactory|Factory
     {
         return new AdFactory();

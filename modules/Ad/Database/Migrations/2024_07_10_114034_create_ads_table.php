@@ -16,8 +16,8 @@ return new class () extends Migration {
             $table->id();
             $table->string('title', 255);
             $table->text('description');
-            $table->integer('impressions');
-            $table->integer('clicks');
+            $table->integer('impressions')->default(0);
+            $table->integer('clicks')->default(0);
             $table->timestamps();
         });
     }

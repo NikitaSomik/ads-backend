@@ -18,8 +18,8 @@ class AdStatisticResource extends JsonResource
     {
         return [
             'date' => $this->resource->date,
-            'total_impressions' => $this->resource->total_impressions,
-            'total_clicks' => $this->resource->total_clicks,
+            'total_impressions' => (int) $this->resource->total_impressions ?? 0,
+            'total_clicks' => (int) $this->resource->total_clicks ?? 0,
         ];
     }
 }

@@ -12,7 +12,6 @@ use Modules\Ad\Models\Ad;
  */
 class AdFactory extends Factory
 {
-
     protected $model = Ad::class;
 
     /**
@@ -25,9 +24,9 @@ class AdFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
-            'impressions' => $this->faker->numberBetween(100, 10000),
-            'clicks' => $this->faker->numberBetween(10, 1000),
-            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'impressions' => $this->faker->numberBetween(1, 100),
+            'clicks' => $this->faker->numberBetween(1, 100),
+            'created_at' => $this->faker->dateTimeBetween('-10 days', 'now'),
             'updated_at' => now(),
         ];
     }
